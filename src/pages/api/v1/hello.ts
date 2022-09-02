@@ -1,13 +1,18 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-
-type Data = {
-  name: string;
-};
+import { IResponseData } from "../../../types/ApiResponse";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<IResponseData>
 ) {
-  res.status(200).json({ name: "John Doe" });
+  const name: string =
+    Math.floor(Math.random() * 100) >= 50 ? "John Doe" : "Jane Doe";
+
+  return res.status(200).json({
+    success: true,
+    data: {
+      name,
+    },
+  });
 }
