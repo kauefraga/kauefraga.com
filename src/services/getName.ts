@@ -1,5 +1,13 @@
 import { api } from "../providers/axios";
 
+interface ApiResponse {
+  data: {
+    name: string;
+  };
+}
+
 export const getName = async () => {
-  return api.get<{ name: string }>("/hello").then((res) => res.data.name);
+  const res = await api.get<ApiResponse>("/hello").then((res) => res.data);
+
+  return res.data.name;
 };
