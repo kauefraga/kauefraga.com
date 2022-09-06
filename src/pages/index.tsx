@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Icon } from "../components/Icon";
+import { NavLink } from "../components/Link/NavLink";
 import { getName } from "../services/getName";
 
 export default function Home() {
@@ -13,25 +14,19 @@ export default function Home() {
 
   return (
     <>
-      <header className="flex justify-between m-3">
+      <header className="flex justify-between m-3 p-4 text-xl">
         <h1 className="hidden md:inline font-bold text-blue-700">
           Hello, {name}!
         </h1>
         <nav>
-          <a className="px-2" href="#about">
-            About
-          </a>
-          <a className="px-2" href="#contact">
-            Contact
-          </a>
-          <a className="px-2" href="/projects">
-            Projects
-          </a>
+          <NavLink href="#about" anchor="About" />
+          <NavLink href="#contact" anchor="Contact" />
+          <NavLink href="/projects" anchor="Projects" />
         </nav>
       </header>
 
       <main className="flex flex-col mt-8 items-center">
-        <section className="flex flex-col items-center space-y-4">
+        <section id="about" className="flex flex-col items-center space-y-4">
           <h2 className="text-center text-2xl font-semibold">
             Backend Developer
             {/* <h2 className="text-xs">almost fool stack rsrsrs</h2> */}
