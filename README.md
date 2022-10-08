@@ -37,27 +37,24 @@ Or downloading with yarn? `yarn && yarn dev`
 Sincerely, i prefer pnpm, so: `pnpm i && pnpm dev`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/v1/hello](http://localhost:3000/api/v1/hello).
+<br/>
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on http://localhost:3000/api/v1/hello.
 
 ## 💻 Technologies
 
-- :crystal_ball: Framework: [NextJS](https://nextjs.org)
+- 🔮 Framework: [NextJS](https://nextjs.org)
   > "...React framework for production"
-- :rocket: Deployed on [Vercel](https://vercel.com)
+- 🚀 Deployed on [Vercel](https://vercel.com)
   > Vercel have the best deployment for nextjs
-- :globe_with_meridians: HTTP client: [Axios](https://www.npmjs.com/package/axios)
+- 🌐 HTTP client: [Axios](https://www.npmjs.com/package/axios)
   > Axios is a fully featured http client for doing requests
-- :technologist: Developed on [Typescript](https://www.typescriptlang.org)
+- 🧑‍💻 Developed on [Typescript](https://www.typescriptlang.org)
   > Improve dev experience by adding type safety
 
-## :card_file_box: Project tree view
+## 🗃 Project tree view
 
 ```bash
 .
-├─ LICENSE
-├─ package.json
-├─ README.md
 ├─ src
 │  ├─ components
 │  ├─ pages
@@ -70,26 +67,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ├─ tailwind.config.js
 └─ tsconfig.json
 ```
-
-## :art: HTML hierarchies of `/src/pages/index.tsx`
-
-- Header
-
-  - Logo
-  - Navigation
-
-- Main
-
-  - About role (what i do)
-  - About me
-  - [ ] Carousel with tech skills
-  - [ ] Cards in grid layout with latest projects
-
-- Footer
-
-  - [ ] Logo
-  - [ ] Social media icons
-  - [ ] "handcrafted by me © 2022"
 
 ## 📝 License
 
