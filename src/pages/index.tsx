@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { Icon } from "../components/Icon";
-import { NavLink } from "../components/Link/NavLink";
-import { getName } from "../services/getName";
+import { useEffect, useState } from 'react';
+import { Icon } from '../components/Icon';
+import { NavLink } from '../components/Link/NavLink';
+import { getName } from '../services/getName';
 
 export default function Home() {
-  const [name, setName] = useState("World");
+  const [name, setName] = useState('World');
 
   useEffect(() => {
     getName().then((name) => {

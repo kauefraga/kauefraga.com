@@ -1,4 +1,4 @@
-import { api } from "../providers/axios";
+import { api } from '../providers/axios';
 
 interface ApiResponse {
   data: {
@@ -7,7 +7,7 @@ interface ApiResponse {
 }
 
 export const getName = async () => {
-  const res = await api.get<ApiResponse>("/hello").then((res) => res.data);
+  const res = await api.get<ApiResponse>('/hello').then((res) => res.data);
 
   return res.data.name;
 };

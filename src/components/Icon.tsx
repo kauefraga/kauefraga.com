@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-type ImageExtensions = ".png" | ".jpg" | ".jpeg" | "";
+type ImageExtensions = '.png' | '.jpg' | '.jpeg' | '';
 
 interface IconProps {
   src: `/${string}${ImageExtensions}`;
