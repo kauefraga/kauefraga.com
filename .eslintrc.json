@@ -1,6 +1,7 @@
 {
   "extends": "next",
   "rules": {
-    "quotes": ["warn", "single"]
+    "quotes": ["warn", "single"],
+    "semi": "warn"
   }
 }
