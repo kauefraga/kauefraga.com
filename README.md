@@ -42,14 +42,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## 💻 Technologies
 
-- 🔮 Framework: [NextJS](https://nextjs.org)
-  > "...React framework for production"
-- 🚀 Deployed on [Vercel](https://vercel.com)
-  > Vercel have the best deployment for nextjs
-- 🌐 HTTP client: [Axios](https://www.npmjs.com/package/axios)
-  > Axios is a fully featured http client for doing requests
-- 🧑‍💻 Developed on [Typescript](https://www.typescriptlang.org)
-  > Improve dev experience by adding type safety
+- 🔮 [NextJS](https://nextjs.org) - "...React framework for production"
+- 🚀 [Vercel](https://vercel.com) - Vercel have the best deployment for nextjs
+- 🌐 [Axios](https://www.npmjs.com/package/axios) - Axios is a fully featured http client for doing requests
+- 🧑‍💻 [Typescript](https://www.typescriptlang.org) - Improve dev experience by adding type safety
+- 📱 [Social Icons](https://www.npmjs.com/package/react-social-icons)
+- 🎨 [TailwindCSS](https://tailwindcss.com/)
 
 ## 🗃 Project tree view
 
@@ -59,7 +57,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 │  ├─ components
 │  ├─ pages
 │  │  ├─ api
-│  │  │  └── v1
+│  │  │  └─ v1
+│  │  ├─ projects
+│  │  │  └─ random-user.tsx
 │  │  └─ index.tsx
 │  ├─ providers
 │  ├─ services
