@@ -3,8 +3,8 @@ import { KaueSocialIcon } from '../Link/SocialLinks';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="flex flex-col absolute bottom-0 left-0 w-full bg-blue-700 items-center">
-      <header className="m-4 text-center">
+    <footer className="flex flex-col bottom-0 left-0 w-full bg-blue-700 items-center">
+      <header className="my-4 text-center">
         <h2 className="text-white font-semibold text-lg mb-4">
           Kauê Fraga Rodrigues
         </h2>
