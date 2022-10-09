@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Footer } from '../components/Footer/Footer';
 import { Icon } from '../components/Icon';
 import { NavLink } from '../components/Link/NavLink';
 import { getName } from '../services/getName';
@@ -47,7 +48,11 @@ export default function Home() {
             improving my skills at a time.
           </p>
         </section>
+
+        { /* A card-based projects section */}
       </main>
+
+      <Footer />
     </>
   );
 }
