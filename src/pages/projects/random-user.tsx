@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { getRandomUser } from '../../services/getUser';
+import { getRandomUser } from '../../services/getRandomUser';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { IUserProps, User } from '../../components/User/User';
