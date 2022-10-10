@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { getRandomUser } from '../../services/getUser';
-import { IUserProps, User } from '../../components/User/User';
-import { NavLink } from '../../components/Link/NavLink';
 import Head from 'next/head';
+import { getRandomUser } from '../../services/getUser';
+import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
+import { IUserProps, User } from '../../components/User/User';
 
 export default function RandomUser() {
   const [title, setTitle] = useState<string>();
@@ -25,17 +25,10 @@ export default function RandomUser() {
         <title>{title}</title>
         <link rel="icon" type="image/png" href={userImageHref} />
       </Head>
-      <header className="flex justify-center text-lg m-3 p-4 md:justify-between md:text-xl">
-        <h1 className="hidden md:inline md:font-bold md:text-blue-700">
-          Hello 👋!
-        </h1>
-        <nav>
-          <NavLink href="/#about" anchor="About" />
-          <NavLink href="/#contact" anchor="Contact" />
-          <NavLink href="/projects" anchor="Projects" />
-        </nav>
-      </header>
-      <main className="flex flex-col mt-8 items-center">
+
+      <Header />
+
+      <main className="flex flex-col my-8 items-center">
         <section className="flex flex-col items-center text-center space-y-4-items-center">
           {user.map((user: IUserProps, index: number) => {
             return (

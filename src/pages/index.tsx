@@ -1,30 +1,20 @@
 import { useEffect, useState } from 'react';
+import { getName } from '../services/getName';
+import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { Icon } from '../components/Icon';
-import { NavLink } from '../components/Link/NavLink';
-import { getName } from '../services/getName';
 
 export default function Home() {
   const [name, setName] = useState('World');
 
   useEffect(() => {
-    getName().then((name) => {
-      setName(name);
-    });
+    getName()
+      .then(name => setName(name));
   }, []);
 
   return (
     <>
-      <header className="flex justify-center text-lg m-3 p-4 md:justify-between md:text-xl">
-        <h1 className="hidden md:inline md:font-bold md:text-blue-700">
-          Hello, {name}!
-        </h1>
-        <nav>
-          <NavLink href="#about" anchor="About" />
-          <NavLink href="#contact" anchor="Contact" />
-          <NavLink href="/projects" anchor="Projects" />
-        </nav>
-      </header>
+      <Header text={name} />
 
       <main className="flex flex-col my-4 items-center">
         <section id="about" className="flex flex-col items-center space-y-4">
