@@ -2,6 +2,7 @@
   "extends": "next",
   "rules": {
     "quotes": ["warn", "single"],
-    "semi": "warn"
+    "semi": "warn",
+    "object-curly-spacing": ["warn", "always"]
   }
 }
