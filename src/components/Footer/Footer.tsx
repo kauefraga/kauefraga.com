@@ -1,5 +1,4 @@
-import React from 'react';
-import { KaueSocialIcon } from '../Link/SocialLinks';
+import { KaueSocialIcon } from '../Links/SocialLink';
 
 export const Footer: React.FC = () => {
   return (
