@@ -1,38 +1,17 @@
-import { useEffect, useState } from 'react';
+import type { InferGetStaticPropsType } from 'next';
+import { useState } from 'react';
 import { getRepos } from '../../services/getRepos';
+import { getRandomPhotos } from '../../services/getRandomPhotos';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { SearchInput } from '../../components/Inputs/SearchInputs';
 import { Card } from '../../components/Cards/Card';
-import { getRandomPhotos } from '../../services/getRandomPhotos';
 
-interface IRepo {
-  id: number;
-  name: string,
-  description: string,
-  html_url: string,
-}
-
-interface IPhoto {
-  id: number;
-  author: string;
-  width: number;
-  height: number;
-  download_url: string;
-}
-
-export default function Projects() {
-  const [repos, setRepos] = useState<IRepo[]>([]);
+export default function Projects({
+  repos,
+  photos
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [search, setSearch] = useState('');
-  const [photos, setPhotos] = useState<IPhoto[]>([]);
-
-  useEffect(() => {
-    getRepos()
-      .then(repos => setRepos(repos));
-
-    getRandomPhotos()
-      .then(photos => setPhotos(photos));
-  }, []);
 
   const filteredRepos = search.length > 0
     ? repos.filter(repo => repo.name.includes(search))
@@ -88,3 +67,19 @@ export default function Projects() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const repos = await getRepos()
+    .then(repos => repos);
+
+  const photos = await getRandomPhotos()
+    .then(photos => photos);
+
+  return {
+    props: {
+      repos,
+      photos
+    },
+    revalidate: 60 * 60 // 60 minutes
+  };
+};
