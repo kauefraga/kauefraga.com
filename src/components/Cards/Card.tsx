@@ -22,7 +22,7 @@ export const Card: React.FC<ICardProps> = ({ id, title, href, img_url }) => {
       <a
         className="
           w-72 flex flex-col my-2 border-2 border-blue-700 overflow-hidden rounded-lg text-center
-          md:mx-2
+          md:mx-2 hover:font-bold
         "
       >
         <header className="rounded-lg">
@@ -35,7 +35,7 @@ export const Card: React.FC<ICardProps> = ({ id, title, href, img_url }) => {
             alt="Some random image"
           />
         </header>
-        <main className="p-4">
+        <main className="p-4 text-lg">
           {title}
         </main>
       </a>

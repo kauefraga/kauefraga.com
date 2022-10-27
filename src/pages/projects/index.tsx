@@ -21,7 +21,7 @@ export default function Projects({
     <>
       <Header />
 
-      <main className="flex flex-col my-4 items-center 2xl:h-screen">
+      <main className="flex flex-col my-4 items-center 2xl:h-fit">
 
         <SearchInput
           placeholder="Search..."
@@ -32,26 +32,24 @@ export default function Projects({
         <section className="flex flex-col flex-wrap my-8 md:flex-row justify-center">
           {search.length > 0
             ? (
-              <ul>
-                {filteredRepos.map(repo => {
+                filteredRepos.map(repo => {
                   return (
                     <Card
                       key={repo.id}
-                      title={repo.name}
+                      title={repo.name.toLowerCase()}
                       href={repo.html_url}
                       img_url={
                         photos[Math.floor(Math.random() * photos.length)].download_url
                       }
                     />
                   );
-                })}
-              </ul>
+                })
             )
             : repos.map(repo => {
               return (
                 <Card
                   key={repo.id}
-                  title={repo.name}
+                  title={repo.name.toLowerCase()}
                   href={repo.html_url}
                   img_url={
                     photos[Math.floor(Math.random() * photos.length)].download_url
