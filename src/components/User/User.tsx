@@ -2,18 +2,18 @@
 import { Fragment } from 'react';
 
 interface IName {
-  title: string;
+  // title: string;
   first: string;
   last: string;
 }
 
 interface IPicture {
   large: string;
-  medium: string;
+  // medium: string;
   thumbnail: string;
 }
 
-export interface IUserProps {
+interface IUserProps {
   name: IName;
   picture: IPicture;
   gender: string;
@@ -26,9 +26,9 @@ export interface IUserProps {
   };
 }
 
-export const User: React.FC<{key: number, props: IUserProps}> = ({ key, props }) => {
+export const User: React.FC<{props: IUserProps}> = ({ props }) => {
   return (
-    <Fragment key={key}>
+    <>
       <header>
         <img
           className="rounded-full"
@@ -44,6 +44,6 @@ export const User: React.FC<{key: number, props: IUserProps}> = ({ key, props })
         <p>{props.gender}</p>
         <p>{props.location.city} - {props.location.country}</p>
       </main>
-    </Fragment>
+    </>
   );
 };

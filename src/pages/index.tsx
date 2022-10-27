@@ -1,20 +1,26 @@
-import { useEffect, useState } from 'react';
-import { getName } from '../services/getName';
+import { Loading } from '../components/Loading';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { Icon } from '../components/Icon';
+import { useFetch } from '../hooks/useFetch';
+import { baseApiURL } from '../providers/axios';
+
+interface IGetName {
+  data: {
+    name: string;
+  };
+}
 
 export default function Home() {
-  const [name, setName] = useState('World');
+  const { data } = useFetch<IGetName>(`${baseApiURL}/hello`);
 
-  useEffect(() => {
-    getName()
-      .then(name => setName(name));
-  }, []);
+  if (!data) {
+    return <Loading />;
+  }
 
   return (
     <>
-      <Header text={name} />
+      <Header text={data.data.name} />
 
       <main className="flex flex-col my-4 items-center">
         <section id="about" className="flex flex-col items-center space-y-4">
