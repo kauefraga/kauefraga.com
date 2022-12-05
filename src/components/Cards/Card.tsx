@@ -12,32 +12,54 @@ import NextLink from 'next/link';
 interface ICardProps {
   id?: number;
   title: string;
+  description: string;
   href: string;
-  img_url: string;
 }
 
-export const Card: React.FC<ICardProps> = ({ id, title, href, img_url }) => {
+const colors = [
+  'red', 'tomato',
+  'green', 'seagreen',
+  'yellow',
+  'blue', 'skyblue',
+  'purple', 'blueviolet',
+  'gray', 'slategray',
+  'dimgray',
+  'orange',
+  'teal'
+];
+
+export const Card: React.FC<ICardProps> = ({ id, title, description, href }) => {
+
+  if (!description) {
+    description = '😥 There is no description. Probably deprecated.';
+  }
+
   return (
     <NextLink key={id} href={href}>
       <a
         className="
-          w-72 flex flex-col my-2 border-2 border-blue-700 overflow-hidden rounded-lg text-center
-          md:mx-2 hover:font-bold
+          flex w-80 h-32 my-2 border-2 border-blue-700 rounded-lg
+          md:w-96 md:mx-2 overflow-hidden
         "
       >
-        <header className="rounded-lg">
-          <img
-            src={img_url}
-            style={{
-              width: '284px',
-              height: '212px'
-            }}
-            alt="Some random image"
-          />
-        </header>
-        <main className="p-4 text-lg">
-          {title}
+        <aside
+          className="w-[2.5%] h-full"
+          style={{
+            backgroundColor: colors[Math.floor(Math.random() * colors.length)]
+          }}
+        ></aside>
+        <main className="flex flex-col w-[95%] p-4">
+          <h3 className="font-bold text-lg">{title}</h3>
+          <p className="w-60 flex-wrap md:w-80 md:text-lg">
+            {description}
+          </p>
         </main>
+        <aside
+          className="w-[2.5%] h-full"
+          style={{
+            backgroundColor: colors[Math.floor(Math.random() * colors.length)]
+          }}
+        ></aside>
       </a>
     </NextLink>
   );

@@ -14,7 +14,7 @@ export default function Projects({
   const [search, setSearch] = useState('');
 
   const filteredRepos = search.length > 0
-    ? repos.filter(repo => repo.name.includes(search))
+    ? repos.filter(repo => repo.name.includes(search.toLowerCase()))
     : [];
 
   return (
@@ -37,10 +37,8 @@ export default function Projects({
                     <Card
                       key={repo.id}
                       title={repo.name.toLowerCase()}
+                      description={repo.description}
                       href={repo.html_url}
-                      img_url={
-                        photos[Math.floor(Math.random() * photos.length)].download_url
-                      }
                     />
                   );
                 })
@@ -50,10 +48,8 @@ export default function Projects({
                 <Card
                   key={repo.id}
                   title={repo.name.toLowerCase()}
+                  description={repo.description}
                   href={repo.html_url}
-                  img_url={
-                    photos[Math.floor(Math.random() * photos.length)].download_url
-                  }
                 />
               );
             })
