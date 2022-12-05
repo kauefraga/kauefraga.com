@@ -1,4 +1,4 @@
-export interface IApiResponse {
+export interface ApiResponse {
   success: boolean;
   data: {
     [key: string]: any;

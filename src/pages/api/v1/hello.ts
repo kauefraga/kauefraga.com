@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { IApiResponse } from '../../../types/ApiResponse';
+import { ApiResponse } from '../../../types/ApiResponse';
 
 export default function handler(
   _: NextApiRequest,
-  response: NextApiResponse<IApiResponse>
+  response: NextApiResponse<ApiResponse>
 ) {
   const name: string =
     Math.floor(Math.random() * 100) >= 50 ? 'John Doe' : 'Jane Doe';
