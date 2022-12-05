@@ -8,7 +8,7 @@ export const Header: React.FC<{ text?: string }> = ({ text }) => {
       </h1>
       <nav>
         <NavLink href="/#about" text="About" />
-        <NavLink href="/#contact" text="Contact" />
+        <NavLink href="mailto:kauefragarodrigues456@gmail.com" text="Contact" />
         <NavLink href="/projects" text="Projects" />
       </nav>
   </header>
