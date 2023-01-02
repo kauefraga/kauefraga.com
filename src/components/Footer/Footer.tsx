@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
         </nav>
       </header>
       <main className="mt-4 mb-4">
-        <p className="text-white">Handcrafted by me © 2022</p>
+        <p className="text-white">Handcrafted by me © {new Date().getFullYear()}</p>
       </main>
     </footer>
   );
