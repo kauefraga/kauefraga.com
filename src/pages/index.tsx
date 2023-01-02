@@ -5,14 +5,12 @@ import { Icon } from '../components/Icon';
 import { useFetch } from '../hooks/useFetch';
 import { baseApiURL } from '../providers/axios';
 
-interface IGetName {
-  data: {
-    name: string;
-  };
+interface GetName {
+  name: string;
 }
 
 export default function Home() {
-  const { data } = useFetch<IGetName>(`${baseApiURL}/hello`);
+  const { data } = useFetch<GetName>(`${baseApiURL}/hello`);
 
   if (!data) {
     return <Loading />;
@@ -20,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <Header text={data.data.name} />
+      <Header text={data.name} />
 
       <main className="flex flex-col my-4 items-center">
         <section id="about" className="flex flex-col items-center space-y-4">

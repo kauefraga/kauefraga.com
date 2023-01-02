@@ -10,8 +10,7 @@ export default function handler(
 
   return response.status(200).json({
     success: true,
-    data: {
-      name,
-    },
+    name,
+    now: new Date()
   });
 }
