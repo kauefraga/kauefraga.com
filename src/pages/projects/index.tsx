@@ -36,9 +36,10 @@ export default function Projects({
                   return (
                     <Card
                       key={repo.id}
-                      title={repo.name.toLowerCase()}
+                      name={repo.name.toLowerCase()}
                       description={repo.description}
-                      href={repo.html_url}
+                      html_url={repo.html_url}
+                      license={repo.license}
                     />
                   );
                 })
@@ -47,9 +48,10 @@ export default function Projects({
               return (
                 <Card
                   key={repo.id}
-                  title={repo.name.toLowerCase()}
+                  name={repo.name.toLowerCase()}
                   description={repo.description}
-                  href={repo.html_url}
+                  html_url={repo.html_url}
+                  license={repo.license}
                 />
               );
             })

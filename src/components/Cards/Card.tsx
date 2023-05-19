@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import NextLink from 'next/link';
+import { IRepo } from '../../services/getRepos';
 
 /* Card Representation
   *-----Repo Link------*
@@ -8,13 +9,6 @@ import NextLink from 'next/link';
   |  ?Card Desc(p)     |
   *--------------------*
 */
-
-interface ICardProps {
-  id?: number;
-  title: string;
-  description: string;
-  href: string;
-}
 
 const colors = [
   'red', 'tomato',
@@ -28,14 +22,20 @@ const colors = [
   'teal'
 ];
 
-export const Card: React.FC<ICardProps> = ({ id, title, description, href }) => {
 
+export const Card: React.FC<IRepo> = ({
+  id,
+  name,
+  description,
+  html_url,
+  license,
+}) => {
   if (!description) {
     description = '😥 There is no description. Probably deprecated.';
   }
 
   return (
-    <NextLink key={id} href={href}>
+    <NextLink key={id} href={html_url}>
       <a
         className="
           flex w-80 h-32 my-2 border-2 border-blue-700 rounded-lg
@@ -49,8 +49,17 @@ export const Card: React.FC<ICardProps> = ({ id, title, description, href }) => 
           }}
         ></aside>
         <main className="flex flex-col w-[95%] p-4">
-          <h3 className="font-bold text-lg">{title}</h3>
-          <p className="w-60 flex-wrap md:w-80 md:text-lg">
+          <h3
+            className="font-bold text-lg"
+          >
+            {name}
+            <span className='text-slate-600'>
+              {' '}({license?.key ?? 'there is no license'})
+            </span>
+          </h3>
+          <p
+            className="w-60 flex-wrap md:w-80 md:text-base"
+          >
             {description}
           </p>
         </main>
