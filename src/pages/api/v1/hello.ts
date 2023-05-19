@@ -8,7 +8,7 @@ export default function handler(
   const name: string =
     Math.floor(Math.random() * 100) >= 50 ? 'John Doe' : 'Jane Doe';
 
-  return response.status(200).json({
+  return response.json({
     success: true,
     name,
     now: new Date()

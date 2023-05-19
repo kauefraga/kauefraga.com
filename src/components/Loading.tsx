@@ -1,4 +1,3 @@
-
 export const Loading: React.FC = () => {
   return (
     <div className="flex h-screen text-center items-center justify-center">
