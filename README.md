@@ -1,4 +1,4 @@
-<h1 align="center">kauefraga.com</h1>
+<h1 align="center">kauefraga.com (discontinued)</h1>
 
 <p align="center">
   <img
@@ -21,9 +21,9 @@
   />
 </p>
 
-<h4 align="center">This is my personal website! There is portfolio and so on... </h4>
+<h4 align="center">➡➡ Check my new portfolio at https://kauefraga.tech ⬅⬅</h4>
 
-## ⬇️ How to start developing server
+## ⬇️ How to start developing serer
 
 ```bash
 git clone https://github.com/kauefraga/kauefraga.com.git
